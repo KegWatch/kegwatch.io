@@ -1,0 +1,199 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>How It Works | KegWatch</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="How It Works" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Smart and Fun Keg Monitoring at Home!" />
+<meta property="og:description" content="Smart and Fun Keg Monitoring at Home!" />
+<link rel="canonical" href="https://kegwatch.io/details/" />
+<meta property="og:url" content="https://kegwatch.io/details/" />
+<meta property="og:site_name" content="KegWatch" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How It Works" />
+<script type="application/ld+json">
+{"headline":"How It Works","url":"https://kegwatch.io/details/","@type":"WebPage","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://kegwatch.io/siteicon.png"}},"description":"Smart and Fun Keg Monitoring at Home!","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+		<link type="application/atom+xml" rel="alternate" href="https://kegwatch.io/feed.xml" title="KegWatch" />
+
+		<link rel="stylesheet" href="/css/screen.css">
+		<link rel="icon" type="image/png" href="/favicon.png">
+
+		
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="company-name"><a href="/"><img src="/images/logo.svg" alt="Hydra Logo" width="95" height="33" /></a></div>
+				<nav>
+	<a class="nav-toggle" id="open-nav" href="#">&#9776;</a>
+	<a class="editor-link btn" href="cloudcannon:collections/_data/navigation.yml" class="btn"><strong>&#9998;</strong> Edit navigation</a>
+	
+		
+		
+
+		
+		<a href="/details/
+" class=" active" >How It Works</a>
+	
+		
+		
+
+		
+		<a href="/blog/
+" class="" >Blog</a>
+	
+		
+		
+
+		
+		<a href="/contact/
+" class="" >Contact</a>
+	
+</nav>
+
+			</div>
+		</header>
+		<div class="content">
+	<section class="page">
+		<div class="container ">
+			
+				<h2>How It Works</h2>
+			
+			
+			<hr />
+
+<p><strong>The Problem</strong></p>
+
+<p>Hi! My name is Joe, self proclaimed beer enthusiast and the creator of KegWatch. I have a kegerator at home and was tired of guessing how much beer was left in my kegs. I found myself exploring home solutions to monitor beer levels but there isn’t a large market for monitoring kegs at home. I had already spent countless hours tweaking the system to pour the perfect beer and knew I didn’t want to introduce a whole new set of variables inherent with other solutions on the market. I came across one product, a smart scale for the kegs, but it had mixed reviews, little information, as well as a high price tag. I quickly realized I would be better off building something myself. Realistically, there were two ways I could go about this, weight or flow:</p>
+
+<h3 id="weight">Weight</h3>
+<p>This is the most simple solution! Get the weight of an empty keg and a full keg, take the difference, and estimate the amount of beer left. The following issues arose:</p>
+
+<ol>
+  <li>
+    <p>Drift: I looked into using load cells to build a scale but the cells drift over time. I was fairly confident I could counteract this programmatically, but even if I could, space becomes a concern.</p>
+  </li>
+  <li>
+    <p>Space: I don’t have the vertical space in my kegerator to lift the kegs more than an inch or so. This means I would have to build an impossibly thin scale and deal with the challenges of swapping kegs in and out with reduced headroom.</p>
+  </li>
+  <li>
+    <p>Temperature: Adding a scale inside the refrigeration unit would require drilling a hole to run wires out the back or through the door. Not only does this look terrible, it could affect temperature control.</p>
+  </li>
+</ol>
+
+<h3 id="flow">Flow</h3>
+<p>There are two ways to measure flow: the physical addition of flow rate sensors into the beer line or measuring the time the tap handle is open to estimate flow rate. The flow rate sensors present the following concerns:</p>
+
+<ol>
+  <li>
+    <p>Price: The most commonly used sensors (for this application) are food-grade and reliable but are quite expensive. I was aiming to keep the cost down overall.</p>
+  </li>
+  <li>
+    <p>Change: It took me a <i>very</i> long time to balance my draft system. I spent a year or so battling flat, foamy, and warm beer so the thought of making unecessary changes to my beer lines freaked me out.</p>
+  </li>
+  <li>
+    <p>Temperature (Again): Adding components inside the refrigeration unit would require drilling a hole to run wires out the back or through the door. Not only does this look terrible, it could affect temperature control.</p>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<p><strong>The Solution</strong></p>
+
+<p><img src="/images/howitworks.png" alt="How It Works" class="center" style="width:40%" id="right_align" />
+Time. A draft setup is a closed system with fixed pressure applied constantly. As you pour beer it draws from the bottom of the keg and the head space in the keg is replaced with CO2. Assuming you have a well balanced configuration and a decent CO2 regulator, you should generally have a consistent pour rate from the time a keg is tapped to the minute it kicks.</p>
+
+<p>Enter, KegWatch. As you can tell from above, my biggest concern with other keg monitoring products was adding electronics and components inside the kegerator. I wanted something simple and unobtrusive that wouldn’t interfere with the system itself.</p>
+
+<p>KegWatch exists as a self-contained system entirely outside of the refrigeration unit. Installation is as easy as removing your existing tower cap and dropping KegWatch in its place! After placing a magnet on the back of your favorite tap handle, you’re ready to calibrate the system and pour some beer!</p>
+
+<p>The calibration process is simple! KegWatch needs a baseline to calculate the flow rate. Once the system is in calibration mode, you’ll input the number of calibration pours and which tap you’re using (if you have a multi-tap kegerator). After each pour you’ll input the number of ounces poured and at the end of the process your flow rate will be calculated and saved.</p>
+
+<h3 id="hardware">Hardware</h3>
+<p>The system is currently based around Hall-effect sensors. Once the tap handle is pulled opened, the attached magnet will move far enough away from KegWatch that the system will register the tap as <i>open</i>. Once the magnet moves back toward KegWatch it will register the tap as <i>closed</i> and calculate how many ounces were poured based on <i>flow_rate * time_open</i>.</p>
+
+<p>One unique feature of KegWatch is user tracking. By attaching a barcode or QR code scanner to KegWatch you are able to scan yourself in before opening the tap and have the pour tagged to you!</p>
+
+<h3 id="software">Software</h3>
+<p>As of now, KegWatch stores all of this data (time, which tap, the beer, ounces poured, who consumed it, etc.) in a big database. Using a platform called <i>Grafana</i> it is possible to visualize this data in a fun and meaningful way! With the ability to track who is consuming beer, you can also create leaderboards and chart fun statistics about friends and family.</p>
+
+<p>All data is stored locally and does not require any cloud, subscription, or service.</p>
+
+<p><br /></p>
+
+<p><strong>Where We Are Now</strong></p>
+
+<p>KegWatch is currently undergoing several revisions in order to be more reliable, accurate, and even easier to use. We are entering the hardware prototyping phase with plans to release an affordable product. We are also expanding our software functionality to include enhanced game modes and live BAC calculation!</p>
+
+<p>Be sure to follow the blog and check in frequently for updates!</p>
+
+<style type="text/css" rel="stylesheet">
+*   #right_align  {
+    float: right;    
+    margin: 0 0 0 15px;
+    }
+</style>
+
+
+		</div>
+	</section>
+</div>
+
+		<footer>
+			<div class="container">
+				<p class="editor-link"><a href="cloudcannon:collections/_data/footer.yml" class="btn"><strong>&#9998;</strong> Edit footer</a></p>
+				<div class="footer-columns">
+					
+					<ul class="footer-links">
+						
+							<li><a  href="/details/
+" >
+								
+								How It Works</a></li>
+						
+							<li><a  href="/blog/
+" >
+								
+								Blog</a></li>
+						
+							<li><a  href="/contact/
+" >
+								
+								Contact</a></li>
+						
+					</ul>
+					
+					<ul class="footer-links">
+						
+							<li><a target="_blank" href="https://twitter.com/KegWatch_io
+" class="Twitter-icon">
+								
+									
+		<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" /></svg>
+	
+
+								
+								Twitter</a></li>
+						
+					</ul>
+					
+				</div>
+				<p class="copyright">&copy; 2022 KegWatch | <a href="/credits">Credits</a></p>
+			</div>
+		</footer>
+		<script>
+			document.getElementById("open-nav").onclick = function () {
+				document.body.classList.toggle("nav-open");
+				return false;
+			};
+		</script>
+	</body>
+</html>
